@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenCV Video Stream</title>
+    <style>
+        #video-container {
+            margin: auto;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <img id="video" src="{{ url_for('video_feed') }}" alt="Video Stream">
+    </div>
+    <script>
+        const video = document.getElementById('video');
+        video.addEventListener('error', function() {
+            console.error('Error playing video');
+        });
+    </script>
+</body>
+</html>
